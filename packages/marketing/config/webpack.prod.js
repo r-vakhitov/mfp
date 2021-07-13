@@ -12,12 +12,13 @@ const prodConfig = {
   plugins: [
     new ModuleFederationPlugin({
       name: 'marketing',
+      filename: 'remoteEntry.js',
       exposes: {
-        './MarketingApp' : './src/bootstrap'
+        './MarketingApp': './src/bootstrap',
       },
-      shared: packageJson.dependencies
-    })
-  ]
+      shared: packageJson.dependencies,
+    }),
+  ],
 };
 
 module.exports = merge(commonConfig, prodConfig);
